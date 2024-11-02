@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: white;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+}
+#nav{
+    height: 145px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 150px;
+    gap: 50px; /*gives gap between display elements*/
+    position: fixed; /*for keeping navigation on one place*/
+    justify-content: flex-start;
+    z-index: 99;
+}
+#nav img{
+    height: 75px;
+}
+#nav h4{
+    text-transform: uppercase; /*changes text into uppercase*/
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+.video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    background-size: 400% 400%;
+    animation: gradients 9s ease infinite;
+    background: linear-gradient(
+    		-45deg,
+    		#ffffff,
+    		#ffe4e9,
+    		#fcc8e2,
+    		#f6baed,
+    		#efb0ff,
+    		#d3a2ff,
+    		#8eb8ff,
+    		#91efff,
+    		#d5f9ff
+    	);
+}
+#main{
+    position: relative; /*used relative for showing this division*/
+    background-color: rgb(0,0,0,0.37);
+}
+#page1{
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 h1{
+    font-size: 100px;
+    font-weight: 900;
+    position: relative;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+#page1 h1::before{
+    content:"EAT. DRINK. PLAY.";
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    position: absolute;
+    color: #000;
+    top: -6px;
+    left: -6px;
+    -webkit-text-stroke: 2px lightsteelblue;
+    z-index: -1;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 40%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+#page2{
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: lightsteelblue;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    height: 500px;
+    width: 500px;
+    opacity: 0.30;
+    background-color: lightsteelblue;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+}
+#scroller{
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{/*for removing the scrollbar*/
+    display: none
+}
+#scroller-in-1{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll; /*these are scrolling animation properties*/
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in-2{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller h4{
+    display: inline-block; /*this makes this division go right to previous division*/
+    font-size: 100px;
+    font-weight: 900;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-right: 10px;
+    color: transparent;
+    transition: all linear 0.5s;
+    -webkit-text-stroke: 2px lightsteelblue; /*for adding boundaries into texts*/
+}
+#scroller h4:hover{
+    color: lightsteelblue;
+}
+#cards-container{
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+.card{
+    height: 80%;
+    width: 24%;
+    background-color: steelblue;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all ease 0.6s;
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 160px;
+    background-color: lightsteelblue;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.overlay p{
+    color: black;
+    font-size: 18px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+#card1 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card2 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+#card3 {
+  background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
